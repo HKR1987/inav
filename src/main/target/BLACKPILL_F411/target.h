@@ -17,7 +17,7 @@
 
 #pragma once
 
-#define TARGET_BOARD_IDENTIFIER "ST41"
+#define TARGET_BOARD_IDENTIFIER "BLP411"
 #define USBD_PRODUCT_STRING     "BLACKPILL_F411"
 
 #define LED0                    PC13
@@ -26,7 +26,6 @@
 
 // *************** SPI **********************
 #define USE_SPI
-
 #define USE_SPI_DEVICE_1
 #define SPI1_SCK_PIN           PA5
 #define SPI1_MISO_PIN          PA6
@@ -37,17 +36,7 @@
 #define SPI2_MISO_PIN          PB14
 #define SPI2_MOSI_PIN          PB15
 
-
 // *************** SPI Gyro & ACC ********************** 
-// SPI1 için PA4 pini (slave chip select pin) CS pinidir. SPI1_NSS pin
-// SPI2 için PB12 pini (slave chip select pin) CS pinidir. SPI2_NSS pin
-
-// SDA/SDI: connect to board MOSI.
-// SCL/SCLK: connect to board SCK.
-// AD0/SDO: connect to board MISO.
-// nCS: connect to board chip select pin NSS
-// https://arduinka.biz.ua/image/cache/catalog/gy-6500-2-500x500.jpg
-
 #define USE_IMU_MPU9250
 #define MPU9250_SPI_BUS         BUS_SPI2
 #define MPU9250_CS_PIN          PB12
@@ -64,7 +53,6 @@
 #define IMU_MPU6500_ALIGN       CW0_DEG
 
 // *************** Gyro/Acel/Baro/Mag *****************************
-
 #define USE_I2C
 #define USE_I2C_DEVICE_1
 #define I2C1_SCL                PB8
@@ -76,7 +64,6 @@
 
 #define USE_EXTI
 #define GYRO_INT_EXTI           PA14
-// #define USE_MPU_DATA_READY_SIGNAL
 #define USE_MAG_DATA_READY_SIGNAL
 #define ENSURE_MAG_DATA_READY_IS_HIGH
 
@@ -99,11 +86,6 @@
 #define USE_MAG_LIS3MDL
 
 #define MAG_HMC5883_ALIGN CW0_DEG
-
-// *************** SPI OSD *****************************
-#define USE_MAX7456
-#define MAX7456_SPI_BUS         BUS_SPI2
-#define MAX7456_CS_PIN          PB12
 
 // *************** SPI FLASH **************************
 #define USE_FLASHFS
@@ -146,12 +128,11 @@
 #define RSSI_ADC_CHANNEL                ADC_CHN_3
 
 // *************** LED2812 ************************
-
 #define USE_LED_STRIP
 #define WS2811_PIN                      PB5
 
-// ***************  OTHERS FEATURE_OSD*************************
-#define DEFAULT_FEATURES (FEATURE_TX_PROF_SEL | FEATURE_OSD | FEATURE_CURRENT_METER | FEATURE_VBAT | FEATURE_TELEMETRY | FEATURE_SOFTSERIAL )
+// ***************  OTHERS FEATURES*************************
+#define DEFAULT_FEATURES (FEATURE_TX_PROF_SEL  | FEATURE_CURRENT_METER | FEATURE_VBAT | FEATURE_TELEMETRY | FEATURE_SOFTSERIAL )
 
 #define VBAT_SCALE_DEFAULT      1100
 #define CURRENT_METER_SCALE     250

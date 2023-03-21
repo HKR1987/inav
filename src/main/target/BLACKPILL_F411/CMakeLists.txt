@@ -1,1 +1,1 @@
-target_stm32f411xe(BLACKPILL_F411)
+target_stm32f411xe(BLACKPILL_F411 HSE_MHZ 25)
